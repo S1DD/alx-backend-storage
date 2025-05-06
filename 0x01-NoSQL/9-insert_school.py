@@ -7,4 +7,5 @@ def insert_school(mongo_collection, **kwargs):
     """
     Inserts a new document in a collection based on kwargs
     """
-    return mongo_collection.insert(mongo_collection, kwargs).inserted_id
+    result =  mongo_collection.insert_one(mongo_collection, kwargs)
+    return result.inserted_id
